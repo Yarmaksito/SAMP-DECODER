@@ -30,5 +30,17 @@ python cache_decoder.py "C:\path\to\GTA San Andreas User Files\SAMP\cache\127.0.
 ## Output
 The script will generate a new folder named `Decoded_Cache` inside the directory where you run the tool. All recovered skins, textures, and collisions will be dumped there in plain, unencrypted formats ready to be opened in any editor.
 
+## Linking orphans (Heuristic Linker)
+After decrypting the cache, you will notice the files retain their hexadecimal hash names (e.g., `0x1A51D1EF.txd` and `0x1A9F9F7D.dff`). To use them, you must pair the 3D model with its correct texture dictionary.
+
+There is now a companion script, `linker.py`, to automatically pair them:
+
+1. After generating the `Decoded_Cache` folder using the decoder, simply run:
+```bash
+python linker.py
+```
+2. The script will aggressively scan every `.dff` and `.txd` file, extracting their internal ASCII texture strings using optimized C-level regex bindings.
+3. It geometrically cross-references these strings to pair the exact 3D model with its corresponding textures.
+4. The paired assets are automatically grouped, renamed, and copied into a clean `Linked_Cache` folder.
 ---
 *Yarmak's Suite - HIT 'EM UP*
