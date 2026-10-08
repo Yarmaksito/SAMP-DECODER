@@ -1,3 +1,4 @@
+"""SA:MP 0.3.DL Cache Decoder. Created by Yarmak. Discord: https://discord.gg/cRU3fMq7v5"""
 import os
 import sys
 
@@ -11,6 +12,7 @@ def print_watermark():
       
    SA:MP 0.3.DL Cache Decoder
    Created by Yarmak
+   Discord: https://discord.gg/cRU3fMq7v5
     """)
 
 # RenderWare Magic Bytes (Little Endian)

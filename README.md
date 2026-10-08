@@ -1,6 +1,8 @@
 # SA:MP 0.3.DL Cache Decoder
 **Created by Yarmak**
-Discord: @yarmaksito / yarmaksito@proton.me
+Discord: [@yarmaksito](https://discord.gg/cRU3fMq7v5) / yarmaksito@proton.me
+
+Support and access to **Yarmak's Suite**: [discord.gg/cRU3fMq7v5](https://discord.gg/cRU3fMq7v5)
 
 An automated, brute-force decryption tool designed to crack and recover obfuscated assets (models and textures) from SA:MP 0.3.DL server cache folders.
 
@@ -16,6 +18,7 @@ This tool bypasses these protections completely. It doesn't need to know the spe
 - **Magic Byte Detection**: Identifies `.dff` (Clumps) and `.txd` (Texture Dictionaries) using RenderWare core structure rules.
 - **Smart Renaming**: Safely appends the correct extensions without duplicating them.
 - **Batch Processing**: Scans massive cache folders in seconds.
+- **Browser catalog**: Preview every linked DFF/TXD pair in the browser after decoding.
 
 ## How to use
 
@@ -42,5 +45,26 @@ python linker.py
 2. The script will aggressively scan every `.dff` and `.txd` file, extracting their internal ASCII texture strings using optimized C-level regex bindings.
 3. It geometrically cross-references these strings to pair the exact 3D model with its corresponding textures.
 4. The paired assets are automatically grouped, renamed, and copied into a clean `Linked_Cache` folder.
+
+## Browser catalog (3D preview)
+`catalog/` is a local Vue + Vite app that lists every paired model in `Linked_Cache` and renders it in the browser.
+
+You need **Python 3**, **Node.js 18+**, and a decoded/linked cache in this repo.
+
+```bash
+cd catalog
+npm install
+npm run dev / npm run preview
+```
+
+Open the URL Vite prints (usually `http://localhost:4173` or `http://localhost:5173`). Search the sidebar, click a model, orbit the preview, and download the DFF+TXD as a ZIP.
+
+The catalog reads `Linked_Cache/` next to `cache_decoder.py` / `linker.py`. Run those scripts from the repository root so the folder lands in the right place. `Decoded_Cache/` and `Linked_Cache/` are generated output and are gitignored.
+
+`npm run build` then `npm run preview` also works. The file server is attached to the Vite dev/preview process, so this is a local tool, not a static host dump.
+
+## Support
+Join the Discord for support and access to Yarmak's Suite of resources: [https://discord.gg/cRU3fMq7v5](https://discord.gg/cRU3fMq7v5)
+
 ---
-*Yarmak's Suite - HIT 'EM UP*
+*Yarmak's Suite - [HIT 'EM UP](https://youtu.be/41qC3w3UUkU)*

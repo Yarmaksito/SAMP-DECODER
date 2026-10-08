@@ -1,3 +1,4 @@
+"""SA:MP 0.3.DL Heuristic Linker. Created by Yarmak. Discord: https://discord.gg/cRU3fMq7v5"""
 import os
 import string
 import shutil
@@ -14,6 +15,7 @@ def print_watermark():
       
    SA:MP 0.3.DL Heuristic Linker
    Created by Yarmak
+   Discord: https://discord.gg/cRU3fMq7v5
     """)
 
 def extract_strings(filepath, min_len=4):

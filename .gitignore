@@ -1,0 +1,7 @@
+Decoded_Cache/
+Linked_Cache/
+__pycache__/
+*.pyc
+
+catalog/node_modules/
+catalog/dist/
